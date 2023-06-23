@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:  #ccc;
+}
+.container{
+    max-width: 900px;
+    margin: 0 auto; /*it made the div container in middle*/
+}
+.apply_box{
+    max-width:600px;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.9); /*it shows shadow on 3D x,y,z and alpha shows intensity(brightness) aur alpha value in between 0-1*/
+    border-radius: 10px
+}
+.title_small{
+    font-size: 20px;
+}
+.form_container{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+.form_controller{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+/* form{
+    margin-top: 25px;
+} */
+
+input,select,textarea{
+    padding: 7px,10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-size: 15px;
+}
+input,select,textarea:focus{ /*it will change the input color when we will take cursor to it */
+    outline-color: orangered;
+}
+.button_container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+button{
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: transparent solid 2px;
+    transition: 0.3s ease-in; /* it make animation of 0.3 seconds */
+}
+button:hover{ 
+    background-color: #ccc;
+    border: 2px solid orange;
+    color: black;
+    transition: 0.3s ease-out;
+    cursor: pointer; /* making cursor as pointer */
+}
+
+.textarea_control{
+    grid-column: 1 /span 2;
+}
+.textarea_control textarea{
+    width: 100%;
+}
+/*due to textarea of address its not becoming responsive to mobile so we using media queries to make its size according to mobile*/
+@media(max-width:460px){
+    .textarea_control{
+        grid-column: 1 /span 1;
+    }
+}
